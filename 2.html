@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <title>Change String</title>
+</head>
+<body>
+    <h2>Change string to upper string</h2>
+    <form>
+    Enter A String:
+    <input type="text" id="str" onkeyup="change()">
+    <h3 id="result"></h3>
+    </form>
+
+    <script>
+        function change(){
+            var str=document.getElementById('str').value;
+
+            fetch("2.php?str="+str)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Number</title>
+
+    <script>
+        function checkNumber()
+        {
+            var number = document.getElementById("number").value;
+            fetch('11.php?number='+number)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+            
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        Enter Number:
+        <input type="text" id="number" onkeyup="checkNumber()">
+    </form>
+
+    <p id="result"></p>
+
+</body>
+</html>

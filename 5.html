@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function show(product)
+        {
+           fetch("5.php?product="+product)
+           .then(Response=>Response.text())
+           .then(data=>{document.getElementById('result').innerHTML=data;});   
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+       select product:
+       
+       <input type="radio" name="product" 
+       onclick="show('mobile')">Mobile
+
+         <input type="radio" name="product" 
+       onclick="show('Laptop')">Laptop
+
+         <input type="radio" name="product" 
+       onclick="show('TV')">TV
+
+         <input type="radio" name="product" 
+       onclick="show('HeadPhone')">headphone
+
+    </form>
+    <p id="result"></p>
+    
+</body>
+</html>

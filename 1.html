@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Message</title>
+
+    <script>
+        function showName()
+         {
+          var name=document.getElementById("MyName").value;
+
+          fetch("1.php?name="+name)
+          .then(Response=>Response.text())
+          .then(data=>{document.getElementById('msg').innerHTML=data;});
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        Enter Name:
+        <input type="text" id="MyName" onkeyup="showName()">
+    </form>
+
+    <p id="msg"></p>
+
+</body>
+</html>

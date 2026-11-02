@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd Even</title>
+
+    <script>
+        function checkNumber()
+        {
+            var number = document.getElementById("number").value;
+            fetch("6.php?number="+number)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        Enter Number:
+        <input type="text" id="number" onkeyup="checkNumber()">
+    </form>
+
+    <p id="result"></p>
+
+</body>
+</html>

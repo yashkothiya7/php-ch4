@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate</title>
+</head>
+<body>
+    <form action="">
+        Enter String:
+        <input type="text" id="str" onkeyup="chack()">
+        <h3 id="result"></h3>
+    </form>
+    <script>
+        function chack()
+        {
+            var str=document.getElementById('str').value;
+            fetch('7.php?str='+str)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</body>
+</html>

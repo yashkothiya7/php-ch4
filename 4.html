@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h2>Select color:</h2>
+    <form action="">
+        <select id="product" onchange="change()">
+            <option value="">--select--</option>
+            <option value="red">red</option>
+            <option value="pink">pink</option>
+            <option value="black">black</option>
+            <option value="white">white</option>
+            <option value="purpal">purpal</option>
+        </select>
+        <h3 id="result"></h3>
+    </form>
+    <script>
+        function change()
+        {
+            var product=document.getElementById('product').value;
+            fetch("4.php?product="+product)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</body>
+</html>

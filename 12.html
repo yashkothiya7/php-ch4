@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student ID Check</title>
+
+    <script>
+        function checkId()
+        {
+            var id = document.getElementById("stud_id").value;
+            fetch('12.php?id='+id)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        Enter Student ID:
+        <input type="text" id="stud_id" onkeyup="checkId()">
+    </form>
+
+    <p id="result"></p>
+
+</body>
+</html>

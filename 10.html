@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+
+    <script>
+        function showUser()
+        {
+            var id = document.getElementById("userid").value;
+            fetch('10.php?id='+id)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        Select User ID:
+
+        <select id="userid" onchange="showUser()">
+            <option value="">--Select User--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </form>
+
+    <p id="result"></p>
+
+</body>
+</html>

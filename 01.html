@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            function showdata(){
+                var number = document.getElementById('number').value;
+
+                fetch("01.php?number="+number)
+                .then(Response=>Response.text())
+                .then(data=>{document.getElementById("msg").innerHTML=data;});
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            enter numner:
+            <input type="text" id="number" onkeyup="showdata()">
+
+        <p id="msg"> </p>
+        </form>
+    </body>
+</html>

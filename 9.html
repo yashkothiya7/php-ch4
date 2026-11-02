@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Username Validation</title>
+
+    <script>
+        function validate()
+        {
+            var username = document.getElementById("username").value;
+            fetch('9.php?username='+username)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</head>
+
+<body>
+
+    <form>
+        Enter Username:
+        <input type="text" id="username" onkeyup="validate()">
+    </form>
+
+    <p id="result"></p>
+
+</body>
+</html>

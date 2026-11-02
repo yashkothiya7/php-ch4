@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h2>Select Products</h2>
+    <form>
+        <select id="product" onchange="change()">
+            <option value="">--select--</option>
+            <option value="leptop">Leptop</option>
+            <option value="mouse">mouse</option>
+            <option value="keyword">keyword</option>
+            <option value="spekares">spekares</option>
+            <option value="pc">pc</option>
+        </select>
+        <h3 id="result"></h3>
+    </form>
+    <script>
+        function change()
+        {
+            var product=document.getElementById('product').value;
+            fetch("3.php?product="+product)
+            .then(Response=>Response.text())
+            .then(data=>{document.getElementById('result').innerHTML=data;});
+        }
+    </script>
+</body>
+</html>
